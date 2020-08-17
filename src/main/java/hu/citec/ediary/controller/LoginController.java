@@ -10,7 +10,10 @@ public class LoginController {
 	public String login() {
 		return "login";
 	}
-	
+	@GetMapping("/index")
+	public String home() {
+		return "index";
+	}
 	@GetMapping("/new_password")
 	public String createNewPassword() {
 		return "/";
