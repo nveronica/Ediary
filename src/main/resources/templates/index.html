@@ -8,14 +8,16 @@
 <title>E-diary</title>
 </head>
 <body>
-<nav>
-	<ul>
-		<li><a th:href="@{/index}">Home</a></li>
-	</ul>
-</nav>
-
-	<h1>Üdvözöllek!</h1>
-	<a th:href=@{/login}>Bejelentkezés az elektronikus naplóba</a>
-
+<div class="header">
+	<header class="menu-main header">
+		<nav>
+			<ul>
+				<li><a href="/index">Home</a></li>
+			</ul>
+		</nav>
+	</header>
+</div>
+<h1>Üdvözöllek!</h1>
+<a href="/login">Bejelentkezés az elektronikus naplóba</a>
 </body>
 </html>
