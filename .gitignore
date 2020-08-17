@@ -1,0 +1,31 @@
+/bin/
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+>>>>>>> 4df3713b5fa5a4f097f947eb7b273e66ee3c9a5d
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+<<<<<<< HEAD
+
+=======
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/

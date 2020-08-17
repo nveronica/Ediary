@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>User</title>
+</head>
+<body>
+Hello User!
+		Your role: <div sec:authentication="principal.authorities"></div>
+		<form th:action="@{/logout}" method="post">
+			<input class="button" type="submit" value="Kijelentkezés" />
+		</form>
+		<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
+<span th:text="${#authentication.getPrincipal().authorities}"></span>
+
+	<table class="table">
+		<tr>
+			<th>Tanuló ID</th>
+			<th>Tárgy ID</th>
+			<th>Jegy</th>
+			<th>Tantárgy</th>
+			<th>Tanár azonosító</th>
+			<th>Leírás</th>
+			<th>Dátum</th>
+			
+		</tr>
+		<tbody>
+		
+			<tr th:each="subject : ${subject}">
+				<td><span th:text="${subject.userId}"></span></td>
+				<td><span th:text="${subject.subjectId}"></span></td>
+				<td><span th:text="${subject.grade}"></span></td>
+				<td><span th:text="${subject.subjectName}"></span></td>
+				<td><span th:text="${subject.teacherId}"></span></td>
+				<td><span th:text="${subject.descrip}"></span></td>
+				<td><span th:text="${subject.date}"></span></td>
+	<div th:if="${#authorization.expression('hasAuthority(''TANAR'')')}">
+<!-- 				<td><a th:href="@{'/subject/' + ${subject.subjectName} + '/' +  ${subject.subjectId}+ '/' + ${subject.teacherId}+ '/' + ${subject.userId}}">Új jegy hozzáadása</a></td> -->
+				<td><a th:href="@{/add_grade}">Új jegy hozzáadása</a></td>
+	</div></tr>
+
+		</tbody>
+	</table>
+
+</body>
+</html>

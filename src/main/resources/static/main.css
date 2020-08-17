@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+	background-color: #333c3e;
+	text-align: center;
+	margin: 20px;
+	padding: 15px;
+}
+
+h1 {
+	margin-left: 40px;
+	color: lavenderblush;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  transition-duration: 0.5s;
+}
+
+.button:hover {background-color: #e7e7e7;}

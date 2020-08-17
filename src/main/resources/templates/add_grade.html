@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>Jegy beírása</title>
+</head>
+<body>
+
+<div sec:authentication="principal.authorities"></div>
+		<form th:action="@{/logout}" method="post">
+			<input class="button" type="submit" value="Kijelentkezés" />
+		</form>
+		<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
+<span th:text="${#authentication.getPrincipal().authorities}"></span>
+
+	<form th:action="@{/add_grade}"  method="post" th:object="${subjectGrade}">
+			<div>
+				<div class="form-group">
+					<label class="lead" for="id">id</label>
+					<input type="text" class="form-control" id="gradeId" th:field="*{id}"/>
+				</div>
+				<div class="form-group">
+					<label class="lead" for="gradeDate">Dátum</label>
+					<input type="text" class="form-control" id="gradeDate" th:field="*{gradeDate}"/>
+				</div>
+				<div class="form-group">
+					<label class="lead" for="subjectId"> Tantárgy ID</label>
+					<input type="text" class="form-control" id="subjectId" th:field="*{subjectId}" />
+				</div>
+				<div class="form-group">
+					<label class="lead" for="userId"> Diák ID</label>
+					<input type="text" class="form-control" id="userId" th:field="*{userId}" />
+				</div>
+				<div class="form-group">
+					<label class="lead" for="description"> Leírás</label>
+					<input type="text" class="form-control" id="description" th:field="*{description}" />
+				</div>
+				<div class="form-group">
+					<label class="lead" for="teacherId"> Tanár Id</label>
+					<input type="text" class="form-control" id="teacherId" th:field="*{teacherId}" />
+					<div class="form-group">
+					<label class="lead" for="grade"> Jegy</label>
+					<input type="text" class="form-control" id="grade" th:field="*{grade}" />
+					
+				</div>
+				</div>
+			</div>
+			<div>
+				<button class="btn btn-dark">Beírás</button>
+			</div>
+		</form>
+
+
+</body>
+</html>

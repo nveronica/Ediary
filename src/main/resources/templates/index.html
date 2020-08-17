@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}" lang="hu">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>E-diary</title>
+</head>
+<body>
+<nav>
+	<ul>
+		<li><a th:href="@{/index}">Home</a></li>
+	</ul>
+</nav>
+
+	<h1>Üdvözöllek!</h1>
+	<a th:href=@{/login}>Bejelentkezés az elektronikus naplóba</a>
+
+</body>
+</html>

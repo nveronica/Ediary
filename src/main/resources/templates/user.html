@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>User</title>
+</head>
+<body>
+Hello User!
+		Your role: <div sec:authentication="principal.authorities"></div>
+		<form th:action="@{/logout}" method="post">
+			<input class="button" type="submit" value="Sign Out" />
+		</form>
+		
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+    Hi, <span sec:authentication="principal.name"></span> 
+</div>
+
+	<table class="table">
+		<tr>
+			<th>Név</th>
+			<th>Email</th>
+			<th>Aktiválva</th>
+			<th>Szerep</th>
+		</tr>
+		<tbody>
+			<tr th:if="${customUser.empty}">
+				<td colspan="5">There are no users to show</td>
+			</tr>
+			<tr th:each="customUser : ${customUser}">
+				<td><a th:text="${customUser.fullName}" th:href="@{/user} + ${customUser.userId}"></a></td>
+				<td><span th:text="${customUser.email}"></span></td>
+				<td><span th:text="${customUser.activated}"></span></td>
+				<td><span th:text="${customUser.roleType}"></span></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</body>
+</html>

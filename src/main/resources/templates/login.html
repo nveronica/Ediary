@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>Bejelentkezés</title>
+
+</head>
+<body>
+	<h1>Bejelentkezés</h1>
+
+	<div class="form-wrapper">
+		<form name="loginForm" th:action="@{/login}" method="POST">
+			<input type="hidden"> <label>Felhasználónév</label> <input
+				type="text" id="username" name="username"><br> <label>Jelszó</label>
+			<input type="password" id="password" name="password"><br>
+			<button class="button" type="submit">Bejelentkezés</button>
+			<br>
+		</form>
+	</div>
+	<a th:href="@{/new_password}" type="newPassword">Elfelejtettem a
+		jelszót</a>
+	<br>
+	<a th:href="@{/register}" type="registration">Regisztrálni
+		szeretnék</a>
+</body>
+</html>

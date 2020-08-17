@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>User</title>
+</head>
+<body>
+Hello User!
+		Your role: <div sec:authentication="principal.authorities"></div>
+		<form th:action="@{/logout}" method="post">
+			<input class="button" type="submit" value="Kijelentkezés" />
+		</form>
+		<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
+<span th:text="${#authentication.getPrincipal().authorities}"></span>
+	<table class="table">
+		<tr>
+			<th>Tantárgy</th>
+			<th>Tanuló ID</th>
+			<th>Tárgy</th>
+			<th>Minősítés</th>
+			<th>Tanár ID</th>
+			
+		</tr>
+		<tbody>
+			<tr th:if="${customSubject.empty}">
+				<td colspan="5">There are no users to show</td>
+			</tr>
+			<tr th:each="customSubject : ${customSubject}">
+			<td><a th:text="${customSubject.subjectName}" th:href="@{'/subject/'+ ${customSubject.subjectId} + '/' + ${customSubject.teacherId}}"></a></td>
+				<td><span th:text="${customSubject.userId}"></span></td>
+				<td><span th:text="${customSubject.subjectId}"></span></td>
+				<td><span id=grade th:text="${customSubject.grade}"></span></td>
+				<td><span th:text="${customSubject.teacherId}"></span></td>
+				
+			</tr>
+			
+	
+
+		</tbody>
+	</table>
+
+</body>
+</html>
