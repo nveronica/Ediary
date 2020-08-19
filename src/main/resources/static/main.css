@@ -2,21 +2,36 @@
 
 body {
 	background-color: #333c3e;
-	text-align: center;
-	margin: 20px;
-	padding: 15px;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
-
+div, ul, li{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+.header{
+	position: relative;
+ 	margin: 0 auto;
+	width: 100%;
+	
+}
+.menu-main{
+	position: relative;
+	background-color: black;
+	border: lavenderblush;
+}
 h1 {
 	margin-left: 40px;
 	color: lavenderblush;
 }
-
 .button {
   background-color: white;
   color: black;
   border: 2px solid #e7e7e7;
   transition-duration: 0.5s;
 }
-
 .button:hover {background-color: #e7e7e7;}
