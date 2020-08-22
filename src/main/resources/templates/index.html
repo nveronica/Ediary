@@ -9,13 +9,8 @@
 </head>
 <body>
 <div class="header">
-	<header class="menu-main header">
-		<nav>
-			<ul>
-				<li><a th:href="@{/index}">Home</a></li>
-			</ul>
-		</nav>
-	</header>
+	<div th:insert="header.html :: header"></div>
+
 </div>
 <h1>Üdvözöllek!</h1>
 <a href="/login">Bejelentkezés az elektronikus naplóba</a>
