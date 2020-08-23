@@ -7,6 +7,7 @@
 <title>Tanar</title>
 </head>
 <body>
+<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
 Hello User!
 		Your role: <div sec:authentication="principal.authorities"></div>
 		<form th:action="@{/logout}" method="post">

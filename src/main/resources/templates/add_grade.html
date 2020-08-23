@@ -8,7 +8,7 @@
 <title>Jegy beírása</title>
 </head>
 <body>
-
+<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
 <div sec:authentication="principal.authorities"></div>
 		<form th:action="@{/logout}" method="post">
 			<input class="button" type="submit" value="Kijelentkezés" />
