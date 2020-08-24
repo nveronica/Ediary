@@ -10,12 +10,8 @@ public class CustomUser {
 	private int roleId;
 	private String roleType;
 	
-	
-	
-	
 	public CustomUser() {
 	}
-
 
 	public CustomUser(int userId, String userName, String password, String fullName, String email, boolean activated,
 			int roleId, String roleType) {
