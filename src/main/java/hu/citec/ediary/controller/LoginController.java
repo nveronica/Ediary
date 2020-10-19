@@ -1,10 +1,7 @@
 package hu.citec.ediary.controller;
 
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.security.AuthProvider;
 
 @Controller
 public class LoginController {
@@ -17,11 +14,6 @@ public class LoginController {
 	@GetMapping("/new_password")
 	public String createNewPassword() {
 		return "/";
-	}
-	
-	@GetMapping("/register")
-	public String registerNewUser() {
-		return "registration";
 	}
 	
 	@GetMapping("/404")

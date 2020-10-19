@@ -29,9 +29,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		handle(request, response, authentication);
-        clearAuthenticationAttributes(request);
-		
-		
+        clearAuthenticationAttributes(request);	
 	}
 
 	private void clearAuthenticationAttributes(HttpServletRequest request) {
@@ -57,7 +55,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler{
 		
 	}
 
-	private String determineTargetUrl(Authentication authentication) {
+	public String determineTargetUrl(Authentication authentication) {
 		Map<String, String> roleTargetUrlMap = new HashMap<>();
 	    roleTargetUrlMap.put("DIAK", "/student");
 	    roleTargetUrlMap.put("SZULO", "/user");
