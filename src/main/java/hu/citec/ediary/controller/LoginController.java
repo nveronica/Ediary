@@ -16,11 +16,6 @@ public class LoginController {
 		return "/";
 	}
 	
-	@GetMapping("/register")
-	public String registerNewUser() {
-		return "registration";
-	}
-	
 	@GetMapping("/404")
 	public String notFound() {
 		return "error/404";

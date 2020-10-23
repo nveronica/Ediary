@@ -25,4 +25,8 @@ public class AdminController {
 		service.deleteUserById(userId);
 		return "redirect:/admin";
 	}
+	@GetMapping("/add_user")
+	public String newUser(Model model){
+		return "add_user";
+	}
 }

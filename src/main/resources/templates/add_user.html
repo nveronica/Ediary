@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+    <title>E-diary</title>
+</head>
+<body>
+
+    <form th:action="@{/add_user}" th:object="${customUser}" method="post">
+        <div>
+            <div>
+                <label>Felhasználónév</label>
+                <input th:field="*{userName}"/>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Jelszó</label>
+                <input th:field="*{password}"/>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Név</label>
+                <input th:field="*{fullName}"/>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Email</label>
+                <input th:field="*{email}"/>
+            </div>
+        </div>
+        <div>
+            <button>Hozzáadás</button>
+        </div>
+    </form>
+</body>
+</html>
