@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	th:with="lang=${#locale.language}" th:lang="${lang}" lang="hu">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+<title>E-diary</title>
 </head>
 <body>
+	<div class="menu-main" th:insert="fragments/header.html :: header"></div>
 404
 </body>
 </html>
