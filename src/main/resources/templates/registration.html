@@ -7,6 +7,34 @@
 <title>Regisztráció</title>
 </head>
 <body>
-<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
+	<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
+	<form th:action="@{/register}" th:object="${user}" method="post">
+		<div>
+			<label>felhasználónév</label>
+			<input th:field="*{username}">
+		</div>
+		<div>
+			<label>Teljes név</label>
+			<input th:field="*{fullName}">
+		</div>
+		<div>
+			<label>email cím</label>
+			<input th:field="*{email}">
+		</div>
+		<div>
+			<label>telefonszám</label>
+			<input th:field="*{phone}">
+		</div>
+		<div>
+			<label>szerepkör(SZÜLŐ/DIÁK)</label>
+			<input th:field="*{roleType}">
+		</div>
+		<div>
+			<label>Tanuló</label>
+			<input th:field="*{student}">
+		</div>
+		<button type="submit" >submit</button>
+
+	</form>
 </body>
 </html>

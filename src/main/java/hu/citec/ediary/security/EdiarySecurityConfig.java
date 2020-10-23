@@ -9,6 +9,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -49,7 +50,10 @@ public class EdiarySecurityConfig extends WebSecurityConfigurerAdapter{
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout")) 
 			.logoutSuccessUrl("/login?loggedout")
 		.and()
-		.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
+		.exceptionHandling().accessDeniedHandler(accessDeniedHandler)
+		.and()
+		.sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
 
 		
 	}
