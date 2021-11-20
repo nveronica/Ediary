@@ -1,1 +1,1 @@
-web: java -jar target/Ediary-0.0.1-SNAPSHOT.war
+web: java -war target/Ediary-0.0.1-SNAPSHOT.war
