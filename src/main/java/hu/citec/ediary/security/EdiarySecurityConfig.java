@@ -54,8 +54,6 @@ public class EdiarySecurityConfig extends WebSecurityConfigurerAdapter{
 		.and()
 		.sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);
-
-		
 	}
 	
 	@Bean
