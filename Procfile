@@ -1,0 +1,1 @@
+web: java -jar C:\Users\Black\Documents\Data2\Ediary\target\Ediary-0.0.1-SNAPSHOT.war
