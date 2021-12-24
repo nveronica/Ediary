@@ -11,7 +11,7 @@
 	<form th:action="@{/register}" th:object="${user}" method="post">
 		<div>
 			<label>felhasználónév</label>
-			<input th:field="*{username}" name="username">
+			<input th:field="*{user.username}" name="username">
 		</div>
 		<div>
 			<label>Teljes név</label>
