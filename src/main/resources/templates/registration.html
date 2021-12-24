@@ -15,7 +15,7 @@
 		<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
 <span th:text="${#authentication.getPrincipal().authorities}"></span>
 
-	<form th:action="@{/register}" th:object="${user}" method="post">
+	<form th:action="@{/register}" th:object="${newUser}" method="post">
 		<div>
 			<label>felhasználónév</label>
 			<input th:field="*{username}" name="username">
