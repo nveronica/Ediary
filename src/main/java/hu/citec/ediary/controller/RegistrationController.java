@@ -13,9 +13,10 @@ public class RegistrationController {
 	@Autowired
 	UserService userService;
 	
-    @GetMapping("/register")
-    public String registerNewUser(WebRequest request, Model model) {
-        model.addAttribute("user", userService);
+    @RequestMapping("/register")
+    public String registerNewUser(Model model) {
+	CustomUser newUser = new CustomUser();
+        model.addAttribute("user", newUser);
         return "registration";
     }
 
