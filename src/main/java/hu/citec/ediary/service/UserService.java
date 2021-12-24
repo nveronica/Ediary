@@ -67,5 +67,9 @@ public class UserService {
 		
 	}
 
+	public void addCustomUser(CustomUser newUser) {
+		repository.addCustomUser(newUser);
+	}
+
 	
 }
