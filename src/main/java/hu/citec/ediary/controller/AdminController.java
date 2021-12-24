@@ -26,7 +26,7 @@ public class AdminController {
 		return "redirect:/admin";
 	}
 	@GetMapping("/add_user")
-	public String newUser(Model model){
+	public String newUser() {
 		return "add_user";
 	}
 }

@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import hu.citec.ediary.model.CustomGrade;
-import hu.citec.ediary.model.CustomStudent;
 import hu.citec.ediary.model.CustomSubject;
 import hu.citec.ediary.model.CustomUser;
 import hu.citec.ediary.model.Subject;
@@ -71,7 +70,7 @@ public class UserRepository {
 	}
 
 	public void addGrade(CustomGrade customGrade) {
-		String query = "INSERT INTO subject_grade (id, subject_id, user_id, grade_date, descrioption, teacher_id, grade) VALUES (?, ?, ?,?,?,?,?)";
+		String query = "INSERT INTO subject_grade (id, subject_id, user_id, grade_date, descrioption, teacher_id, grade) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		jdbcTemplate.update(query, customGrade.getId(), customGrade.getSubjectId(), customGrade.getUserId(), customGrade.getGradeDate(), customGrade.getDescription(), customGrade.getTeacherId(), customGrade.getGrade());
 		
 	}
