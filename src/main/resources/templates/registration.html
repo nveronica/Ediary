@@ -8,33 +8,6 @@
 </head>
 <body>
 	<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
-	<form th:action="@{/register}" th:object="${user}" method="post">
-		<div>
-			<label>felhasználónév</label>
-			<input th:field="*{user.username}" name="username">
-		</div>
-		<div>
-			<label>Teljes név</label>
-			<input type="text"  th:field="*{fullName}">
-		</div>
-		<div>
-			<label>email cím</label>
-			<input type="email" th:field="*{email}">
-		</div>
-		<div>
-			<label>telefonszám</label>
-			<input type="number" th:field="*{phone}">
-		</div>
-		<div>
-			<label>szerepkör(SZÜLŐ/DIÁK)</label>
-			<input th:field="*{roleType}">
-		</div>
-		<div>
-			<label>Tanuló</label>
-			<input th:field="*{student}">
-		</div>
-		<button type="submit" >submit</button>
-
-	</form>
+	
 </body>
 </html>
