@@ -15,6 +15,7 @@ public class RegistrationController {
 	
     @GetMapping("/register")
     public String registerNewUser(WebRequest request, Model model) {
+    	CustomU
         model.addAttribute("user", userService);
         return "registration";
     }
