@@ -11,27 +11,27 @@
 	<form th:action="@{/register}" th:object="${user}" method="post">
 		<div>
 			<label>felhasználónév</label>
-			<input th:field="*{user.username}" name="username">
+			<input type="text" name="username" th:field="*{username}" >
 		</div>
 		<div>
 			<label>Teljes név</label>
-			<input type="text"  th:field="*{fullName}">
+			<input type="text"  name="fullName" th:field="*{fullName}" >
 		</div>
 		<div>
 			<label>email cím</label>
-			<input type="email" th:field="*{email}">
+			<input type="email" name="email" th:field="*{email}">
 		</div>
 		<div>
 			<label>telefonszám</label>
-			<input type="number" th:field="*{phone}">
+			<input type="number" name="phone" th:field="*{phone}">
 		</div>
 		<div>
 			<label>szerepkör(SZÜLŐ/DIÁK)</label>
-			<input th:field="*{roleType}">
+			<input name="roleType" th:field="*{roleType}">
 		</div>
 		<div>
 			<label>Tanuló</label>
-			<input th:field="*{student}">
+			<input name="student" th:field="*{student}">
 		</div>
 		<button type="submit" >submit</button>
 
