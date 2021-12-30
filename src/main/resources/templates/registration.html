@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="menu-main" th:insert="fragments/header.html :: header"> </div>
+<<<<<<< HEAD
 	<form th:action="@{/register}" th:object="${user}" method="post">
 		<div>
 			<label>felhasználónév</label>
@@ -36,5 +37,14 @@
 		<button type="submit" >submit</button>
 
 	</form>
+=======
+	<div sec:authentication="principal.authorities"></div>
+		<form th:action="@{/logout}" method="post">
+			<input class="button" type="submit" value="Kijelentkezés" />
+		</form>
+		<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
+<span th:text="${#authentication.getPrincipal().authorities}"></span>
+	
+>>>>>>> 7260878c3b86851f2fe4bb0ee653c8b6ef0739e8
 </body>
 </html>
