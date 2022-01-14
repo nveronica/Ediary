@@ -26,12 +26,16 @@
 <!-- 			<input type="number" name="phone" th:field="*{phone}"> -->
 <!-- 		</div> -->
 		<div>
-			<label>szerepkör(SZÜLŐ/DIÁK)</label>
-			<input name="roleType" th:field="*{roleType}">
+			
+<!-- 			<input name="roleType" th:field="*{roleType}"> -->
 		</div>
 		<div>
-			<label>Tanuló</label>
-			<input name="student" th:field="*{student}">
+			<label>szerepkör(SZÜLŐ/DIÁK)</label>
+			<select>
+				<option th:field="*{roleType}">Diák</option>
+				<option th:field="*{roleType}">Szülő</option>
+			</select>
+			
 		</div>
 		<button type="submit" >submit</button>
 
