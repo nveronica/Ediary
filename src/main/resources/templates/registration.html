@@ -32,8 +32,8 @@
 		<div>
 			<label>szerepkör(SZÜLŐ/DIÁK)</label>
 			<select>
-				<option th:field="*{roleType}">Diák</option>
-				<option th:field="*{roleType}">Szülő</option>
+				<option th:field="*{roleType}" th:value="student">Diák</option>
+				<option th:field="*{roleType}" th:value="teacher">Szülő</option>
 			</select>
 			
 		</div>
