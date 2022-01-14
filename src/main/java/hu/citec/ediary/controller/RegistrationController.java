@@ -16,6 +16,7 @@ public class RegistrationController {
     @RequestMapping("/register")
     public String registerNewUser(Model model) {
 	CustomUser newUser = new CustomUser();
+
         model.addAttribute("user", newUser);
         return "registration";
     }

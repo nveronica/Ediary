@@ -76,7 +76,7 @@ public class UserRepository {
 	}
 
 	public void addCustomUser(CustomUser newUser) {
-		String query = "INSERT INTO users(`user_id`, `username`, `user_password`, `fullname`, `email`, `activated`, `blocked`) VALUES (?,?,?,?,?,?,?)";
+		String query = "INSERT INTO users(`user_id`, `username`, `user_password`, `fullname`, `email`, `activated`, `blocked`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		//jdbcTemplate.update(query,newUser.getUserId(),newUser.getUserName(),newUser.getGrade);
 		
 	}
